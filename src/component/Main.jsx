@@ -21,7 +21,6 @@ export const Main = () => {
 
   return (
     <> 
-      <p className = "todotitle">To Do List</p>
     <form className="write" onSubmit={onSubmit}>
       <input className="todo_input" type="text" value={todo} name="todo" onChange={onChange} required />
       <button type="submit" className="submit_btn">ADD</button>

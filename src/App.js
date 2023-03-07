@@ -4,10 +4,15 @@ import {ListManage} from './component/ListManage.jsx'
 
 const App = () => {
   return (
-    <div className="App">
-      <Main />
-      <ListManage />
-    </div>
+    <>
+      <div className="App">
+        <p className = "todotitle">To Do List</p>
+        <Main />
+        <div className="scroll">
+          <ListManage />
+        </div>
+      </div>
+    </>
   );
 }
 
