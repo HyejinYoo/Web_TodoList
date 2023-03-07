@@ -76,18 +76,6 @@ fieldset {
   border: 0;
 }
 
-/* legend,
-label {
-  display: block;
-  width: 1px;
-  height: 1px;
-  font-size: 1px;
-  text-indent: -9999px;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-} */
-
 input,
 label {
   vertical-align: middle;
@@ -102,36 +90,4 @@ button {
 button,
 input {
   outline: 0;
-}
-
-
-
-/* Help Class Setting */
-/* ir(image replace) - 이미지 대체(치환)기법 */
-.ir {
-  display: block;
-  width: 100%;
-  height: 100%;
-  text-indent: -9999px;
-  overflow: hidden;
-  background: no-repeat 0 0;
-}
-
-/* 플롯해제 클래스 */
-.clearfix::after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
-/* 화면 감추기 클래스 */
-.screen-hidden {
-  display: block;
-  width: 1px;
-  height: 1px;
-  font-size: 1px;
-  text-indent: -9999px;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
 }

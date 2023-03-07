@@ -26,7 +26,6 @@ export const ListManage = (e) => {
     setUpdate(e.target.value);
   }
 
-
   const onUpdate = async (idx) => {
     if (changeCheck === true) {
       await axios.post('/update', {
@@ -35,7 +34,6 @@ export const ListManage = (e) => {
       })
         .then((res) => {
           console.log('res');
-          alert('수정이 완료되었습니다.');
           window.location.reload();
         }).catch((err) => {
           console.log(err);
@@ -57,15 +55,44 @@ export const ListManage = (e) => {
       })
   }
 
+  const onDown = async (idx, content) => {
+    await axios.post('/down', {
+      idx: idx,
+      content: content
+    })
+      .then((res) => {
+        console.log('res');
+        window.location.reload();
+      }).catch((err) => {
+        console.log(err);
+      })
+  }
+
+  const onUp = async (idx, content) => {
+    await axios.post('/up', {
+      idx: idx,
+      content: content
+    })
+      .then((res) => {
+        console.log('res');
+        window.location.reload();
+      }).catch((err) => {
+        console.log(err);
+      })
+  }
+
 
 
   return (
     <>
-      {list.map(k => (
+      {list.map((k, index )=> (
         <ListFormat
+          key={index}
           onUpdate={onUpdate}
           onDelete={onDelete}
           onChange={onChange}
+          onDown = {onDown}
+          onUp = {onUp}
           idx={k.idx}
           content={k.content}
           updateContent={k.content}
@@ -80,16 +107,24 @@ export const ListFormat = (props) => {
   const [updating, isUpdating] = useState(false);
 
   return (
-    <div className="list">
+    
+      <div className="list">
       {updating === false ?
         <>
+          <div className="updownbutton">
+            <div className="up" onClick={() => props.onUp(props.idx, props.content)}>
+              <button type="submit">▲</button> 
+            </div>
+            <div className="down" onClick={() => props.onDown(props.idx, props.content)}>
+              <button type="submit">▼</button> 
+            </div>
+          </div>
           <div className="title" onClick={() => isUpdating(true)}>
             <h3>{props.content}</h3>
           </div>
-          <button className="done" onClick={() => props.onDelete(props.idx)}>
+          <div className="done" onClick={() => props.onDelete(props.idx)}>
             <button type="submit">Done</button> 
-            <label for={props.idx} class="done"></label>
-          </button>
+          </div>
         </>
         :
         <form onSubmit={() => props.onUpdate(props.idx)}>
@@ -102,5 +137,7 @@ export const ListFormat = (props) => {
         </form>
       }
     </div>
+   
+    
   )
 }
