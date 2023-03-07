@@ -11,9 +11,9 @@ body {
 }
 
 .App {
-  height: 80vh;
-  width: 500px;
-  padding: 40px 50px;
+  height: 500px;
+  width: 400px;
+  padding: 10px 40px;  
   background-color: #ffffff;
   box-shadow: -1px -1px 15px 9px rgb(0 0 0 / 3%), -1px -1px 15px 9px rgb(0 0 0 / 3%), -1px -1px 15px 9px rgb(0 0 0 / 3%), -1px -1px 15px 9px rgb(0 0 0 / 3%);
 }
@@ -67,7 +67,8 @@ body {
 }
 
 .todotitle{
-  font-size: 80px;
+  margin-left: 80px;
+  font-size: 30px;
   color: #75797d;
   padding-left : 10px;
   padding-right: 10px;
@@ -93,5 +94,5 @@ textarea {
 }
 .scroll{
   overflow-y: auto;
-  height: 340px;
+  height: 330px;
 }
